@@ -29,5 +29,9 @@ export class CustomersController {
         return await this.customer.send('customers/get',id).toPromise()
     }
 
+    @Post('filter')
+    async filter(@Body() dto : any){
+        return await this.customer.send('customers/filter',dto).toPromise();
+    }
 }
 

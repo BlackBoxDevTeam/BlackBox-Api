@@ -14,11 +14,6 @@ export class ClubsController {
        return await this.clubs.send('clubs/add',q).toPromise(); 
     }
 
-    @Post('filter')
-    async filter (@Body() dto  : any){
-       return await this.clubs.send('clubs/filterPurchase',dto).toPromise(); 
-    }
-
 
     @Get('/:id')
     async Get (@Param('id') id : number){
@@ -33,9 +28,14 @@ export class ClubsController {
     }
 
 
-    @Delete()
-    async delete (@Body() dto:any){
-       return await this.clubs.send('clubs/delete',dto).toPromise(); 
+    @Delete('/:id')
+    async delete (@Param('id') id : number){
+       return await this.clubs.send('clubs/delete',id).toPromise(); 
+    }
+
+    @Post('tag')
+    async tag(@Body() tag){
+       return await this.clubs.send('clubs/tag',tag).toPromise();
     }
 
 }
