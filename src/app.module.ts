@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { ClubsModule } from './clubs/clubs.module';
 import { CustomersModule } from './customers/customers.module';
-import { PurchaseHistoryModule } from './purchase-History/purchase-history.module';
+import { PurchaseHistoryModule } from './purchase-history/purchase-history.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
